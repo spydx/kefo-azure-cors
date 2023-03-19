@@ -9,6 +9,8 @@ on:
       - main
   workflow_dispatch:
 
+env: 
+  PROJECT: CorsDemo/CorsDemo.csproj
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,10 +25,10 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release --project CorsDemo
-
+        run: dotnet build --configuration Release $PROJECT
+        
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/CorsDemo
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/CorsDemo $PROJECT
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
