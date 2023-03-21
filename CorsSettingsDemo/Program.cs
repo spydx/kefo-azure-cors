@@ -1,4 +1,5 @@
 var builder = WebApplication.CreateBuilder(args);
+const string CORS_ENVIRONMENT = "LOCALCORS";
 
 // Add services to the container.
 
@@ -13,6 +14,12 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
+var env = Environment.GetEnvironmentVariable(CORS_ENVIRONMENT);
+if (env is not null)
+{
+    // set CORS Settings
+    app.UseCors();
+}
 
 app.UseHttpsRedirection();
 
