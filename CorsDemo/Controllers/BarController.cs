@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CorsDemo.Controllers;
 
 [ApiController]
-[Route("Bar")]
+[Route("[controller]")]
 public class BarController : ControllerBase
 {
     private readonly ILogger<BarController> _logger;
@@ -12,16 +12,17 @@ public class BarController : ControllerBase
         _logger = logger;
     }
 
-    [HttpPut(Name = "Money")]
-    public IActionResult PutMoneyOnBar()
+    [HttpPost(Name = "Money")]
+    public IActionResult PostMoneyOnBar()
     {
         _logger.LogInformation("X-Money");
-        var found = Request.Headers.TryGetValue("X-Money", out var headerValue);
-        if (found)
-        {
-            return Ok(headerValue);
-        }
 
-        return NotFound();
+
+        var found = Request.Headers.TryGetValue("X-Money", out var headerValue);
+        if (!found) return NotFound();
+        
+        HttpContext.Response.Headers.Add("X-Beer", "IPA");
+        return Ok(headerValue);
+
     }
 }

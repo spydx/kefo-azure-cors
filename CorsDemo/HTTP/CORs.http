@@ -1,0 +1,32 @@
+OPTIONS  http://localhost:5220/Bar
+Origin: "https://www.kefo.no"
+Access-Control-Request-Method: POST
+Access-Control-Request-Headers: X-Money
+
+### Returns 405
+
+OPTIONS  http://localhost:5220/Bar
+Origin: "https://appservice.kefo.no"
+Access-Control-Request-Method: POST
+Access-Control-Request-Headers: X-Money
+
+###
+
+OPTIONS  http://localhost:5220/Bar
+Origin: "https://local.kefo.no"
+Access-Control-Request-Method: POST
+Access-Control-Request-Headers: X-Money
+
+### Returns 204 No Content and that is OK
+
+OPTIONS  http://localhost:5220/Bar
+Origin: "https://local.kefo.no"
+Access-Control-Request-Method: POST
+
+###
+
+POST  http://localhost:5220/Bar
+Origin: "https://local.kefo.no"
+X-MONEY: 100
+
+### 200 should contain X-BEER
