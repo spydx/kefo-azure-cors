@@ -13,7 +13,7 @@ builder.Services.AddCors(p => p
         .WithOrigins("https://local.kefo.no")
         .AllowAnyHeader()
         .AllowAnyMethod())
-    );
+     );
 
 var app = builder.Build();
 
