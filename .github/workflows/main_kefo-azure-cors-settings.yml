@@ -8,8 +8,10 @@ on:
     branches:
       - main
   workflow_dispatch:
-env: 
-  PROJECT: CorsSettingsDemo/CorsSettingsDemo.csproj
+
+env:
+  PROJECT: CorsDemo/CorsDemo.csproj
+  
 jobs:
   build:
     runs-on: ubuntu-latest

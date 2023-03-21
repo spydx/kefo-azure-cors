@@ -11,6 +11,7 @@ on:
 
 env: 
   PROJECT: CorsDemo/CorsDemo.csproj
+  
 jobs:
   build:
     runs-on: ubuntu-latest
