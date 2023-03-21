@@ -101,7 +101,7 @@ http://blog.kefo.no:81
 
 # CORS Deep Dive
 
- _"An HTTP-Header mechanism that allows a **server** to indicate any origins other than its **own** from which a browser should be permitted to be loading resources."_
+_"An HTTP-Header mechanism that allows a **server** to indicate any origins other than its **own** from which a browser should be permitted to be loading resources."_
 
 ---
 # OVERVIEW
@@ -170,13 +170,6 @@ That only allows the following headers:
 ```
 
 ---
-# Azure App Service CORS
-
-- Enabled or disabled?
-- What does this checkbox mean?
-![bg right:60% 90%](assets/kefo-azure-cors.png)
-
----
 
 # Credential Request
 
@@ -193,10 +186,19 @@ are requests that contain:
 
 - Not all are pre-flighted (e.g. a `GET` some requests)
 - The server must specify: `Access-Control-Allow-Origin` without `*`
-- The client (browser) will reject the *RESPONSE* 
-if `Access-Control-Allow-Credentials: true` is missing.
+- The client (browser) will reject the *RESPONSE*
+  if `Access-Control-Allow-Credentials: true` is missing.
 
 ---
+
+# Azure App Service CORS
+
+- Enabled or disabled?
+- What does this checkbox mean?
+  ![bg right:60% 90%](assets/kefo-azure-cors.png)
+
+---
+
 
 # Azure Default Policy
 
@@ -207,8 +209,8 @@ For the list of Allowed Origins this is the policy:
 - `AllowAllHeaders`
 - `AllowAnyMethods`
 - `IncludeCredentials` (selectable)
-z
-How to remove
+  z
+  How to remove
 
 - WebPage: unclick and remove all origins
 - Cli: `az webapp cors remove --allow-origins -g off-cors -n kefo-azure-cors-settings `
