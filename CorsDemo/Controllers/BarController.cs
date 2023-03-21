@@ -7,6 +7,7 @@ namespace CorsDemo.Controllers;
 public class BarController : ControllerBase
 {
     private readonly ILogger<BarController> _logger;
+
     public BarController(ILogger<BarController> logger)
     {
         _logger = logger;
@@ -17,12 +18,10 @@ public class BarController : ControllerBase
     {
         _logger.LogInformation("X-Money");
 
-
         var found = Request.Headers.TryGetValue("X-Money", out var headerValue);
         if (!found) return NotFound();
-        
+
         HttpContext.Response.Headers.Add("X-Beer", "IPA");
         return Ok(headerValue);
-
     }
 }
