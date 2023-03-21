@@ -7,6 +7,7 @@ namespace CorsDemo.Controllers;
 public class HealthController : ControllerBase
 {
     private readonly ILogger<HealthController> _logger;
+
     public HealthController(ILogger<HealthController> logger)
     {
         _logger = logger;
@@ -15,13 +16,9 @@ public class HealthController : ControllerBase
     [HttpGet]
     public IActionResult Get()
     {
-        
         var result = Environment.GetEnvironmentVariable("LOCALCORS");
         _logger.LogInformation($"Result is : {result}");
-        if (result is not null)
-        {
-            return Ok(result);
-        }
+        if (result is not null) return Ok(result);
 
         return Ok();
     }
