@@ -3,7 +3,7 @@ marp: true
 theme: bouvet
 paginate: true
 ---
-<!-- Add this to VSCode theme: 'https://raw.githubusercontent.com/kenneth-fossen/marp-bouvet-theme/main/theme.css' -->
+
 <!-- _class: lead -->
 
 # CORS
