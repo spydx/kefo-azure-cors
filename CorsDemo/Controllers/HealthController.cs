@@ -18,8 +18,7 @@ public class HealthController : ControllerBase
     {
         var result = Environment.GetEnvironmentVariable("LOCALCORS");
         _logger.LogInformation($"Result is : {result}");
-        if (result is not null) return Ok(result);
-
-        return Ok();
+        
+        return Ok(result ?? "I'm Alive!!!!!");
     }
 }

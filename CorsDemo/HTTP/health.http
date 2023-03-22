@@ -1,0 +1,9 @@
+GET http://kefo-azure-cors.azurewebsites.net/Health
+Origin: ""https://appservice.kefo.no"
+
+### Returns 200
+
+GET http://kefo-azure-cors-settings.azurewebsites.net/Health
+Origin: ""https://local.kefo.no"
+
+### Returns 200
