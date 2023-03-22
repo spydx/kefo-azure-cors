@@ -30,3 +30,16 @@ Origin: "https://local.kefo.no"
 X-MONEY: 100
 
 ### 200 should contain X-BEER
+
+
+# returns 400
+curl -X OPTIONS --location "http://kefo-azure-cors.azurewebsites.net/Bar" \
+-H "Origin: "https://www.kefo.no"" \
+-H "Access-Control-Request-Method: POST" \
+-H "Access-Control-Request-Headers: X-Money" -v
+
+# returns 200
+curl -X OPTIONS --location "http://kefo-azure-cors.azurewebsites.net/Bar" \
+    -H "Origin: "https://appservice.kefo.no"" \
+    -H "Access-Control-Request-Method: POST" \
+    -H "Access-Control-Request-Headers: X-Money" -v
