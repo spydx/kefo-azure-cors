@@ -3,7 +3,7 @@ marp: true
 theme: bouvet
 paginate: true
 ---
-<!-- theme: 'https://raw.githubusercontent.com/kenneth-fossen/marp-bouvet-theme/main/theme.css' -->
+<!-- Add this to VSCode theme: 'https://raw.githubusercontent.com/kenneth-fossen/marp-bouvet-theme/main/theme.css' -->
 <!-- _class: lead -->
 
 # CORS
@@ -209,8 +209,17 @@ For the list of Allowed Origins this is the policy:
 - `AllowAllHeaders`
 - `AllowAnyMethods`
 - `IncludeCredentials` (selectable)
-  z
-  How to remove
+
+---
+
+# Azure Defaults
+
+Returns
+
+- 200 OK for ok requests (204)
+- 400 Bad Request for non-compliant requests (405)
+
+How to remove
 
 - WebPage: unclick and remove all origins
 - Cli: `az webapp cors remove --allow-origins -g off-cors -n kefo-azure-cors-settings `
