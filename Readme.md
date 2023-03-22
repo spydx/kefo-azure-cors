@@ -320,3 +320,4 @@ app.UseCors(_policyName);
 - [Tutorial: Host RESTful API with CORS - Azure App Service](https://learn.microsoft.com/en-gb/azure/app-service/app-service-web-tutorial-rest-api)
 - [ASP.NET Core Middleware](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-7.0#middleware-order)
 - [Fetch Standard](https://fetch.spec.whatwg.org/#cors-safelisted-request-header)
+- [GitHub spydx/kefo-azure-cors](https://www.github.com/spydx/kefo-azure-cors)
